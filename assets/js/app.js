@@ -1,4 +1,4 @@
-var map, featureList, karSearch = [], glugSearch = [], ccenSearch = [];
+var map, featureList, karSearch = [], glugSearch = [];
 
 $(document).on("click", ".feature-row", function(e) {
   sidebarClick(parseInt($(this).attr('id')));
@@ -107,18 +107,18 @@ $.getJSON("data/kar_state.geojson", function (data) {
 
 // trying topolayer
 // disabled districts
-/*L.TopoJSON = L.GeoJSON.extend({  
-  addData: function(jsonData) {    
+/*L.TopoJSON = L.GeoJSON.extend({
+  addData: function(jsonData) {
     if (jsonData.type === "Topology") {
       for (key in jsonData.objects) {
         geojson = topojson.feature(jsonData, jsonData.objects[key]);
         L.GeoJSON.prototype.addData.call(this, geojson);
       }
-    }    
+    }
     else {
       L.GeoJSON.prototype.addData.call(this, jsonData);
     }
-  }  
+  }
 });
 
 var dist = new L.TopoJSON(null, {
@@ -129,7 +129,7 @@ var dist = new L.TopoJSON(null, {
         weight: 2,
         opacity: 1.0
       };
-    }    
+    }
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
@@ -170,7 +170,7 @@ var dist = new L.TopoJSON(null, {
 $.getJSON('data/kar_dists.topojson')
   .done(addTopoData);
 
-function addTopoData(topoData){  
+function addTopoData(topoData){
   dist.addData(topoData);
   // dist.addTo(map);
 }*/
@@ -383,8 +383,7 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Interventions": {
-    "<img src='assets/img/glug.png' width='24' height='28'>&nbsp;GLUGs": glugLayer,
-    "<img src='assets/img/cc.png' width='24' height='28'>&nbsp;Community Centers": ccenLayer
+    "<img src='assets/img/glug.png' width='24' height='28'>&nbsp;GLUGs": glugLayer
   },
   "Reference": {
     "Karnataka": kar
